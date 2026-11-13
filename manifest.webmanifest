@@ -1,0 +1,13 @@
+
+{
+  "name": "WEST WAY Conversion Tracker",
+  "short_name": "WEST WAY",
+  "description": "WEST WAY Real Estate Conversion Tracker",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101c35",
+  "theme_color": "#101c35",
+  "icons": []
+}
