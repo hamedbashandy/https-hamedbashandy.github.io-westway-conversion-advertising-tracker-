@@ -7,85 +7,98 @@
 
   <title>WEST WAY | Conversion Tracker</title>
 
-  <link rel="manifest" href="./manifest.webmanifest">
-
-  <link rel="icon" href="./icon-192.png?v=3" type="image/png" sizes="192x192">
-<link rel="shortcut icon" href="./icon-192.png?v=3" type="image/png">
-<link rel="apple-touch-icon" href="./icon-192.png?v=3">
-
   <meta name="theme-color" content="#101c35">
+  <meta name="description" content="WEST WAY Real Estate Conversion Tracker">
+
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="./icon-192.png">
 
   <style>
     * {
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
-      min-height: 100vh;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #101c35;
+      font-family: Arial, sans-serif;
+    }
+
+    .app-header {
+      height: 48px;
+      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+      padding: 0 14px;
       background: #101c35;
       color: white;
-      font-family: Arial, sans-serif;
-      text-align: center;
+      border-bottom: 1px solid #263653;
     }
 
-    .container {
-      padding: 35px;
-    }
-
-    .logo {
-      width: 260px;
-      max-width: 85%;
-      height: auto;
-      object-fit: contain;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: white;
-      font-size: 28px;
-    }
-
-    p {
-      color: #cbd5e1;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .status {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 18px;
-      border-radius: 20px;
-      background: #176b45;
-      color: white;
+    .app-title {
+      font-size: 14px;
       font-weight: bold;
+      letter-spacing: .3px;
+    }
+
+    .open-app {
+      color: white;
+      background: #c8102e;
+      text-decoration: none;
+      padding: 7px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    #app-frame {
+      display: block;
+      width: 100%;
+      height: calc(100% - 48px);
+      border: 0;
+      background: white;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
 
-    <img
-      src="./icon-512.png"
-      alt="REMAX WEST WAY Logo"
-      class="logo"
+  <header class="app-header">
+    <div class="app-title">WEST WAY | CONVERSION TRACKER</div>
+
+    <a
+      class="open-app"
+      href="https://script.google.com/macros/s/AKfycbxJAMNgnpnWQBEbsu56KKfksTbqqnsknyTOppWBE3NrJhLQj5t3ZxcghCT0On_qFXA0/exec"
+      target="_blank"
+      rel="noopener"
     >
+      Open Full App
+    </a>
+  </header>
 
-    <h1>WEST WAY</h1>
+  <iframe
+    id="app-frame"
+    src="https://script.google.com/macros/s/AKfycbxJAMNgnpnWQBEbsu56KKfksTbqqnsknyTOppWBE3NrJhLQj5t3ZxcghCT0On_qFXA0/exec"
+    title="WEST WAY Conversion Tracker"
+    allow="fullscreen"
+  ></iframe>
 
-    <p>Conversion Tracker</p>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("./sw.js")
+          .catch(function (error) {
+            console.error("Service Worker registration failed:", error);
+          });
+      });
+    }
+  </script>
 
-    <p>PWA Hosting Test</p>
-
-    <div class="status">
-      Hosting is working successfully
-    </div>
-
-  </div>
 </body>
 </html>
