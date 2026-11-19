@@ -1,5 +1,5 @@
 
-const CACHE_NAME = "west-way-pwa-v1";
+const CACHE_NAME = "westway-pwa-v2";
 
 const APP_FILES = [
   "./",
