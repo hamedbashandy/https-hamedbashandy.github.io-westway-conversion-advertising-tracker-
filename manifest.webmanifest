@@ -1,8 +1,8 @@
 
 {
-  "name": "WESTWAY Conversion Tracker",
-  "short_name": "WESTWAY",
-  "description": "WESTWAY Real Estate Conversion Tracker",
+  "name": "WESTWAY | Conversion and Advertising Tracker",
+  "short_name": "WESTWAY Tracker",
+  "description": "WESTWAY Real Estate Conversion and Advertising Tracker",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
